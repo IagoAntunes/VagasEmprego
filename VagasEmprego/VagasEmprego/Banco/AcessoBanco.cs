@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SQLite;
+using System.Linq;
 using VagasEmprego.Modelos;
 using Xamarin.Forms;
 
@@ -15,26 +16,31 @@ namespace VagasEmprego.Banco
             var dep = DependencyService.Get<ICaminho>();
             string caminho = dep.ObterCaminho("database.sqlite");
             _conexao = new SQLiteConnection(caminho);
+            _conexao.CreateTable<Vaga>();
         }
         public void Cadastro(Vaga vaga)
         {
-
+            _conexao.Insert(vaga);
         }
-        public void Exclusao(int id)
+        public void Exclusao(Vaga vaga)
         {
-
+            _conexao.Delete(vaga);
         }
         public void Atualização(Vaga vaga)
         {
-
+            _conexao.Update(vaga);
         }
         public List<Vaga> Consultar()
         {
-            return null;
+            return _conexao.Table<Vaga>().ToList();
+        }
+        public List<Vaga> Pesquisar(string palavra)
+        {
+            return _conexao.Table<Vaga>().Where(a=>a.nomeVaga.Contains(palavra)).ToList();
         }
         public Vaga ObterVagaPorId(int id)
         {
-            return null;
+            return _conexao.Table<Vaga>().Where(a => a.Id == id).FirstOrDefault();
         }
     }
 }
