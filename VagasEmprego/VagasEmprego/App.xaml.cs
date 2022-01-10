@@ -1,4 +1,5 @@
 ﻿using System;
+using VagasEmprego.Paginas;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace VagasEmprego
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ConsultaVagas();
         }
 
         protected override void OnStart()

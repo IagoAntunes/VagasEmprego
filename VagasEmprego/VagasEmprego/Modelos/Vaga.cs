@@ -12,6 +12,7 @@ namespace VagasEmprego.Modelos
         public int Id { get; set; }
         public string nomeVaga { get; set; }
         public short Quantidade { get; set; }
+        public string Empresa { get; set; }
         public string Cidade { get; set; }
         public double Salario { get; set; }
         public string Descricao { get; set; }
