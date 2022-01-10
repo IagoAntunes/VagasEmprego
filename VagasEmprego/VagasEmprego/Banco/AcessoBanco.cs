@@ -36,7 +36,7 @@ namespace VagasEmprego.Banco
         }
         public List<Vaga> Pesquisar(string palavra)
         {
-            return _conexao.Table<Vaga>().Where(a=>a.nomeVaga.Contains(palavra)).ToList();
+            return _conexao.Table<Vaga>().Where(a=>a.NomeVaga.Contains(palavra)).ToList();
         }
         public Vaga ObterVagaPorId(int id)
         {

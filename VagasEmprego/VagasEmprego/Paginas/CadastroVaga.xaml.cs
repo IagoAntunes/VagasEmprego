@@ -21,7 +21,7 @@ namespace VagasEmprego.Paginas
         {
             //TODO - Obter dados da tela
             Vaga vaga = new Vaga();
-            vaga.nomeVaga = NomeVaga.Text;
+            vaga.NomeVaga = NomeVaga.Text;
             vaga.Quantidade = short.Parse(Quantidade.Text);
             vaga.Salario = double.Parse(Salario.Text);
             vaga.Empresa = Empresa.Text;
@@ -36,7 +36,8 @@ namespace VagasEmprego.Paginas
             database.Cadastro(vaga);
 
             //TODO - Voltar para tela de pesquisa
-            Navigation.PopAsync();
+            //Navigation.PopAsync();
+            App.Current.MainPage = new NavigationPage(new ConsultaVagas());
 
         }
     }

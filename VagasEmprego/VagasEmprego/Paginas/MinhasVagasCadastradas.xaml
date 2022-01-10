@@ -9,10 +9,9 @@
                 <Label Text="Encontre seu emprego aqui" FontSize="12"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Adicionar" Clicked="GoCadastro"/>
-                <Button Text="MinhasVagas" Clicked="Go MinhasVagas"/>
+
             </StackLayout>
-            <Entry Placeholder="Pesquisar"/> ]
+            <Entry Placeholder="Pesquisar"/>
             <Label Text="15 vaga encontradas"/>
             <ListView>
                 <ListView.ItemTemplate>

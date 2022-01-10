@@ -16,5 +16,13 @@ namespace VagasEmprego.Paginas
         {
             InitializeComponent();
         }
+        public void EditarAction(object sender,EventArgs args) 
+        {
+        
+        }
+        public void ExcluirAction(object sender,EventArgs args)
+        {
+
+        }
     }
 }

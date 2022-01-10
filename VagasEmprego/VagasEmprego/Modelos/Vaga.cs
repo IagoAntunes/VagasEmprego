@@ -10,7 +10,7 @@ namespace VagasEmprego.Modelos
     {
         [PrimaryKey,AutoIncrement]
         public int Id { get; set; }
-        public string nomeVaga { get; set; }
+        public string NomeVaga { get; set; }
         public short Quantidade { get; set; }
         public string Empresa { get; set; }
         public string Cidade { get; set; }

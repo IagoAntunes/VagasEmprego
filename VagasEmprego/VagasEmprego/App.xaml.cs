@@ -11,7 +11,7 @@ namespace VagasEmprego
         {
             InitializeComponent();
 
-            MainPage = new ConsultaVagas();
+            MainPage = new NavigationPage(new ConsultaVagas());
         }
 
         protected override void OnStart()

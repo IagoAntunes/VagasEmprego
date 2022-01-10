@@ -16,7 +16,7 @@ namespace VagasEmprego.Paginas
         {
             InitializeComponent();
 
-            DisplayAlert("Mensagem", vaga.nomeVaga, "Ok");
+            DisplayAlert("Mensagem", vaga.NomeVaga, "Ok");
         }
     }
 }
