@@ -15,8 +15,7 @@ namespace VagasEmprego.Paginas
         public DetalheVaga(Vaga vaga)
         {
             InitializeComponent();
-
-            DisplayAlert("Mensagem", vaga.NomeVaga, "Ok");
+            BindingContext = vaga;
         }
     }
 }

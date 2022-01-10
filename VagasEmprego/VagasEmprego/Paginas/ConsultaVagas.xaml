@@ -27,7 +27,7 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
                                 <StackLayout Grid.Column="0">
-                                    <Label  Text="{Binding NomeVaga}"/>
+                                    <Label x:Name="Nome" Text="{Binding NomeVaga}"/>
                                     <Label  Text="{Binding Empresa}"/>
                                     <Label  Text="{Binding Cidade}"/>
                                 </StackLayout>
