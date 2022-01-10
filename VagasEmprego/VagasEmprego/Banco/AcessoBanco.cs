@@ -9,7 +9,6 @@ namespace VagasEmprego.Banco
 {
     public class AcessoBanco
     {
-
         private SQLiteConnection _conexao;
         public AcessoBanco()
         {
@@ -17,7 +16,6 @@ namespace VagasEmprego.Banco
             string caminho = dep.ObterCaminho("database.sqlite");
             _conexao = new SQLiteConnection(caminho);
         }
-
         public void Cadastro(Vaga vaga)
         {
 
@@ -38,9 +36,5 @@ namespace VagasEmprego.Banco
         {
             return null;
         }
-
-
-
-
     }
 }
