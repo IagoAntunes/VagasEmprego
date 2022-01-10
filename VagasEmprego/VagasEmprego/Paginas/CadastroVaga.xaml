@@ -4,22 +4,24 @@
              x:Class="VagasEmprego.Paginas.CadastroVaga">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Vaga"/>
-            <Entry Placeholder="Empresa"/>
-            <Entry Placeholder="Quantidade"/>
-            <Entry Placeholder="Cidade"/>
-            <Entry Placeholder="Salario"/>
-            <Editor Placeholder="Descrição" HeightRequest="200"/>
+            <Entry Placeholder="NomeVaga" x:Name="NomeVaga"/>
+            <Entry Placeholder="Empresa" x:Name="Empresa"/>
+            <Entry Placeholder="Quantidade" x:Name="Quantidade"/>
+            <Entry Placeholder="Cidade" x:Name="Cidade"/>
+            <Entry Placeholder="Salario" x:Name="Salario"/>
+            <Editor Placeholder="Descrição" HeightRequest="200" x:Name="Descricao"/>
             
             <StackLayout>
                 <Label Text="Tipo de Contratação"/>
                 <Label Text="CLT"/>
-                <Switch/>
+                <Switch x:Name="TipoContratacao"/>
                 <Label Text="PJ"/>
             </StackLayout>
 
-            <Entry Placeholder="Telefone"/>
-            <Entry Placeholder="Email"/>
+            <Entry Placeholder="Telefone" x:Name="Telefone"/>
+            <Entry Placeholder="Email" x:Name="Email"/>
+
+            <Button Text="Salvar" Clicked="SalvarAction"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
