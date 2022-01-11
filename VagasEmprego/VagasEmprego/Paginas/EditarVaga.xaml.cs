@@ -3,25 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VagasEmprego.Modelos;
 using VagasEmprego.Banco;
+using VagasEmprego.Modelos;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace VagasEmprego.Paginas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CadastroVaga : ContentPage
+    public partial class EditarVaga : ContentPage
     {
-        public CadastroVaga()
+        private Vaga vaga { get; set; }
+        public EditarVaga(Vaga vaga)
         {
             InitializeComponent();
+            this.vaga = vaga;
+
+            NomeVaga.Text = vaga.NomeVaga;
+            Quantidade.Text = vaga.Quantidade.ToString();
+            Cidade.Text = vaga.Cidade;
+            Descricao.Text = vaga.Descricao;
+            Telefone.Text = vaga.Telefone;
+            Email.Text = vaga.Email;
+            TipoContratacao.IsToggled = (vaga.TipoContratacao == "CLT") ? false : true;
+
+            //TODO - Colocação dos dados na tela
 
         }
-        private void SalvarAction(object sender,EventArgs args)
+        public void SalvarAction(object sender,EventArgs args)
         {
             //TODO - Obter dados da tela
-            Vaga vaga = new Vaga();
             vaga.NomeVaga = NomeVaga.Text;
             vaga.Quantidade = short.Parse(Quantidade.Text);
             vaga.Salario = double.Parse(Salario.Text);
@@ -32,13 +43,13 @@ namespace VagasEmprego.Paginas
             vaga.Telefone = Telefone.Text;
             vaga.Email = Email.Text;
 
-            //TODO - Salvar informações no banco
+            //Atualizar no Banco de dados
             AcessoBanco database = new AcessoBanco();
-            database.Cadastro(vaga);
+            database.Atualização(vaga);
 
-            //TODO - Voltar para tela de pesquisa
-            //Navigation.PopAsync();
-            App.Current.MainPage = new NavigationPage(new ConsultaVagas());
+            //Redirecionar para tela de minhasvagas
+            App.Current.MainPage = new NavigationPage(new MinhasVagasCadastradas());
+
 
         }
     }

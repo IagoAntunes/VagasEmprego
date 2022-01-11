@@ -32,6 +32,8 @@ namespace VagasEmprego.Paginas
             Label lblEditar = (Label)sender;
             TapGestureRecognizer tapGest = (TapGestureRecognizer)lblEditar.GestureRecognizers[0];
             Vaga vaga = tapGest.CommandParameter as Vaga;
+
+            Navigation.PushAsync(new EditarVaga(vaga));
         }
         public void ExcluirAction(object sender,EventArgs args)
         {
