@@ -13,12 +13,13 @@ namespace VagasEmprego.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ConsultaVagas : ContentPage
     {
+        List<Vaga> Lista;
         public ConsultaVagas()
         {
             InitializeComponent();
 
             AcessoBanco database = new AcessoBanco();
-            var Lista = database.Consultar();
+            Lista = database.Consultar();
             ListaVagas.ItemsSource = Lista;
             lblCount.Text = Lista.Count.ToString();
         }
@@ -37,7 +38,11 @@ namespace VagasEmprego.Paginas
             Vaga vaga = tapGest.CommandParameter as Vaga;
             Navigation.PushAsync(new DetalheVaga(vaga));
         }
-   
+        private void PesquisarAction(object sender,TextChangedEventArgs args)
+        {
+            ListaVagas.ItemsSource = Lista.Where(a => a.NomeVaga.Contains(args.NewTextValue)).ToList();
+
+        }
     
     
     }
