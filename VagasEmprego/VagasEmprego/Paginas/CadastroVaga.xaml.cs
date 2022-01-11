@@ -13,9 +13,13 @@ namespace VagasEmprego.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CadastroVaga : ContentPage
     {
-        public CadastroVaga()
+        public CadastroVaga(Vaga vaga=null)
         {
             InitializeComponent();
+            if(vaga == null)
+            {
+
+            }
         }
         private void SalvarAction(object sender,EventArgs args)
         {
