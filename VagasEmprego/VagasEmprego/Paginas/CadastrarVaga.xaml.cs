@@ -11,9 +11,9 @@ using Xamarin.Forms.Xaml;
 namespace VagasEmprego.Paginas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CadastroVaga : ContentPage
+    public partial class CadastrarVaga : ContentPage
     {
-        public CadastroVaga()
+        public CadastrarVaga()
         {
             InitializeComponent();
 

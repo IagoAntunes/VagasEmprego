@@ -25,7 +25,7 @@ namespace VagasEmprego.Paginas
         }
         private void GoCadastro(object sender,EventArgs args)
         {
-            Navigation.PushAsync(new CadastroVaga());
+            Navigation.PushAsync(new CadastrarVaga());
         }
         private void GoMinhasVagas(object sender, EventArgs args)
         {

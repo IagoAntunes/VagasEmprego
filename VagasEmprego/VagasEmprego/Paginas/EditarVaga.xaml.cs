@@ -20,6 +20,8 @@ namespace VagasEmprego.Paginas
             this.vaga = vaga;
 
             NomeVaga.Text = vaga.NomeVaga;
+            Empresa.Text = vaga.Empresa;
+            Salario.Text = vaga.Salario.ToString();
             Quantidade.Text = vaga.Quantidade.ToString();
             Cidade.Text = vaga.Cidade;
             Descricao.Text = vaga.Descricao;
